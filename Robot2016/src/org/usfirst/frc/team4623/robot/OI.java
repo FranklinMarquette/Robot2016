@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4623.robot;
 
+import org.usfirst.frc.team4623.robot.commands.Extend;
+import org.usfirst.frc.team4623.robot.commands.Retract;
 import org.usfirst.frc.team4623.robot.commands.motor1Move;
 import org.usfirst.frc.team4623.robot.commands.motor1Stop;
 import org.usfirst.frc.team4623.robot.commands.motor2Backwards;
@@ -48,7 +50,12 @@ public class OI {
       JoystickButton move = new JoystickButton(stick, XBox.A_BUTTON);
 	  JoystickButton moveForward = new JoystickButton(stick, XBox.X_BUTTON);
 	  JoystickButton moveBackward = new JoystickButton(stick, XBox.Y_BUTTON);
+	  JoystickButton extend = new JoystickButton(stick, XBox.LB_BUTTON);
+	  JoystickButton retract = new JoystickButton(stick, XBox.RB_BUTTON);
 		
+	  extend.whenPressed(new Extend());
+	  retract.whenPressed(new Retract());
+	  
 	  move.whenPressed(new motor1Move());;
 	  move.whenReleased(new motor1Stop());
 	  

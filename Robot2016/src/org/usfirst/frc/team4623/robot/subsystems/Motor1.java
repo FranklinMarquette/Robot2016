@@ -13,6 +13,11 @@ public class Motor1 extends Subsystem {
     // here. Call these from Commands.
 	
 	SpeedController motor = new Victor(4);
+	
+	public Motor1() {
+		
+		
+	}
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.

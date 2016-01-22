@@ -5,6 +5,7 @@ import org.usfirst.frc.team4623.robot.commands.auto;
 import org.usfirst.frc.team4623.robot.subsystems.Chassis;
 import org.usfirst.frc.team4623.robot.subsystems.Motor1;
 import org.usfirst.frc.team4623.robot.subsystems.Motor2;
+import org.usfirst.frc.team4623.robot.subsystems.Pnuematics;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -29,6 +30,7 @@ public class Robot extends IterativeRobot {
     public static Motor2 motor2;
     public static Chassis chassis;
     public static OI oi;
+    public static Pnuematics pnue;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -40,6 +42,7 @@ public class Robot extends IterativeRobot {
         motor2 = new Motor2();
         chassis = new Chassis();
         oi = new OI();
+        pnue = new Pnuematics();
         
         chooser = new SendableChooser();
         
