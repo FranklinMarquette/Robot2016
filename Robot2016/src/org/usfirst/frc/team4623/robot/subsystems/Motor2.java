@@ -12,10 +12,11 @@ public class Motor2 extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-    SpeedController motor = new Victor(5);
+    private SpeedController motor;
     
     public Motor2() {
     	
+    	motor = new Victor(5);
     	
     }
     
