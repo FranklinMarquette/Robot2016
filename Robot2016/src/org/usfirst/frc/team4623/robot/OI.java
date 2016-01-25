@@ -43,7 +43,7 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
     
-	public XBox stick = new XBox(1);
+	public XBox stick = new XBox(0);
 	
 	public OI() {
 		

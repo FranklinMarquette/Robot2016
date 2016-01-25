@@ -35,6 +35,7 @@ public class Chassis extends Subsystem {
     }
     
     public void driveTele(double moveValue, double turnValue) {
+    	
     	 drive.arcadeDrive(moveValue, turnValue);
     	
     }
@@ -44,6 +45,8 @@ public class Chassis extends Subsystem {
     }
      
     public void driveAuton(double moveValue, double turnValue) {
+    	
+        drive.arcadeDrive(moveValue, turnValue);
         
     }
    
