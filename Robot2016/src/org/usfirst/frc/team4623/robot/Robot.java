@@ -29,8 +29,8 @@ public class Robot extends IterativeRobot {
     public static Motor1 motor1;
     public static Motor2 motor2;
     public static Chassis chassis;
-    public static OI oi;
     public static Pnuematics pnue;
+    public static OI oi;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -41,8 +41,8 @@ public class Robot extends IterativeRobot {
         motor1 = new Motor1();
         motor2 = new Motor2();
         chassis = new Chassis();
-        oi = new OI();
         pnue = new Pnuematics();
+        oi = new OI();
         
         chooser = new SendableChooser();
         
