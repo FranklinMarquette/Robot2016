@@ -13,6 +13,8 @@ public class Pnuematics extends Subsystem {
     // here. Call these from Commands.
 	
 	Compressor comp = new Compressor(0);
+
+       DoubleSolenoid ds1 = new DoubleSolenoid(0, 1);
 	
 	public Pnuematics() {
 		
@@ -25,28 +27,23 @@ public class Pnuematics extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void retract(int port1, int port2) {
+    public void retract() {
     	
-    	DoubleSolenoid solenoid = new DoubleSolenoid(port1, port2);
-    	
-    	solenoid.set(DoubleSolenoid.Value.kReverse);
+       ds1.set(DoubleSolenoid.Value.kReverse);
     	
     }
     
-    public void extend(int port1, int port2) {
+    public void extend() {
     	
-    	DoubleSolenoid solenoid = new DoubleSolenoid(port1, port2);
-    	
-    	solenoid.set(DoubleSolenoid.Value.kForward);
+    	ds1.set(DoubleSolenoid.Value.kForward);
     	
     }
     
-    public void stop(int port1, int port2) {
+    public void stop() {
     	
-    	DoubleSolenoid solenoid = new DoubleSolenoid(port1, port2);
-    	
-    	solenoid.set(DoubleSolenoid.Value.kOff);
+    	ds1.set(DoubleSolenoid.Value.kOff);
     	
     }
+
 }
 
