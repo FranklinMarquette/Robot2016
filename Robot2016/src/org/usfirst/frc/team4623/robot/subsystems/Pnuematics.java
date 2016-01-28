@@ -27,19 +27,19 @@ public class Pnuematics extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void retract() {
+    public void retract1() {
     	
        ds1.set(DoubleSolenoid.Value.kReverse);
     	
     }
     
-    public void extend() {
+    public void extend1() {
     	
     	ds1.set(DoubleSolenoid.Value.kForward);
     	
     }
     
-    public void stop() {
+    public void stop1() {
     	
     	ds1.set(DoubleSolenoid.Value.kOff);
     	
