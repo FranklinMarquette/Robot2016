@@ -5,6 +5,7 @@ import org.usfirst.frc.team4623.robot.commands.auto;
 import org.usfirst.frc.team4623.robot.subsystems.Chassis;
 import org.usfirst.frc.team4623.robot.subsystems.Motor1;
 import org.usfirst.frc.team4623.robot.subsystems.Motor2;
+import org.usfirst.frc.team4623.robot.subsystems.Motor3;
 import org.usfirst.frc.team4623.robot.subsystems.Pnuematics;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -28,6 +29,7 @@ public class Robot extends IterativeRobot {
     
     public static Motor1 motor1;
     public static Motor2 motor2;
+    public static Motor3 motor3;
     public static Chassis chassis;
     public static Pnuematics pnue;
     public static OI oi;
@@ -40,6 +42,7 @@ public class Robot extends IterativeRobot {
        
         motor1 = new Motor1();
         motor2 = new Motor2();
+        motor3 = new Motor3();
         chassis = new Chassis();
         pnue = new Pnuematics();
         oi = new OI();
