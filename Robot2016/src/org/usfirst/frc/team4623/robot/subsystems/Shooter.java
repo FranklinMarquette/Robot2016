@@ -7,20 +7,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class Motor2 extends Subsystem {
+public class Shooter extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-    private SpeedController motor;
-    
-    public Motor2() {
-    	
-    	motor = new Victor(5);
-    	
-    }
-    
-    
+	private SpeedController shooter;
+	
+	public Shooter() {
+		
+		shooter = new Victor(4);
+		
+	}
+
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
@@ -28,7 +27,13 @@ public class Motor2 extends Subsystem {
     
     public void run(double speed) {
     	
-    	motor.set(speed);
+    	shooter.set(speed);
+    	
+    }
+    
+    public void stop(){
+    	
+    	shooter.set(0);
     	
     }
     

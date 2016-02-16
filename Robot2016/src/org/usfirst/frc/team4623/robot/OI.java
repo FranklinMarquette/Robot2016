@@ -1,12 +1,8 @@
 package org.usfirst.frc.team4623.robot;
 
-import org.usfirst.frc.team4623.robot.commands.Extend;
-import org.usfirst.frc.team4623.robot.commands.Retract;
-import org.usfirst.frc.team4623.robot.commands.motor1Move;
-import org.usfirst.frc.team4623.robot.commands.motor1Stop;
-import org.usfirst.frc.team4623.robot.commands.motor2Backwards;
-import org.usfirst.frc.team4623.robot.commands.motor2Forwards;
-import org.usfirst.frc.team4623.robot.commands.motor2Stop;
+import org.usfirst.frc.team4623.robot.commands.Feed;
+import org.usfirst.frc.team4623.robot.commands.shoot;
+import org.usfirst.frc.team4623.robot.commands.stopFeed;
 import org.usfirst.frc.team4623.robot.subsystems.XBox;
 
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -47,23 +43,15 @@ public class OI {
 	
 	public OI() {
 		
-      JoystickButton move = new JoystickButton(stick, XBox.A_BUTTON);
-	  JoystickButton moveForward = new JoystickButton(stick, XBox.X_BUTTON);
-	  JoystickButton moveBackward = new JoystickButton(stick, XBox.Y_BUTTON);
-	  JoystickButton extend = new JoystickButton(stick, XBox.LB_BUTTON);
-	  JoystickButton retract = new JoystickButton(stick, XBox.RB_BUTTON);
-		
-	  extend.whenPressed(new Extend());
-	  retract.whenPressed(new Retract());
+      JoystickButton shoot = new JoystickButton(stick, XBox.LB_BUTTON);
+	  JoystickButton feed = new JoystickButton(stick, XBox.RB_BUTTON);
 	  
-	  move.whenPressed(new motor1Move());;
-	  move.whenReleased(new motor1Stop());
+	  shoot.whenPressed(new shoot());
 	  
-	  moveForward.whenPressed(new motor2Forwards());
-	  moveForward.whenReleased(new motor2Stop());
+	  feed.whenPressed(new Feed());
+	  feed.whenReleased(new stopFeed());
 	  
-	  moveBackward.whenPressed(new motor2Backwards());
-	  moveBackward.whenReleased(new motor2Stop());
+      
 		
 	}
 	

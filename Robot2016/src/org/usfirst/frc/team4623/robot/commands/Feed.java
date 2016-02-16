@@ -7,13 +7,14 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class motor1Stop extends Command {
+public class Feed extends Command {
 
-    public motor1Stop() {
+    public Feed() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	
-    	requires(Robot.motor1);
+    	requires(Robot.feed);
+    	
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +23,7 @@ public class motor1Stop extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.motor1.run(0);
+    	Robot.feed.run(1);
     }
 
     // Make this return true when this Command no longer needs to run execute()

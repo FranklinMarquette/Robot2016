@@ -1,19 +1,15 @@
 package org.usfirst.frc.team4623.robot.commands;
 
-import org.usfirst.frc.team4623.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class motor2Backwards extends Command {
+public class liftDown extends Command {
 
-    public motor2Backwards() {
+    public liftDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	
-    	requires(Robot.motor2);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +18,6 @@ public class motor2Backwards extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.motor2.run(-1);
     }
 
     // Make this return true when this Command no longer needs to run execute()

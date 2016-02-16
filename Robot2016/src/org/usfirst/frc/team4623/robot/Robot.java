@@ -3,10 +3,10 @@ package org.usfirst.frc.team4623.robot;
 
 import org.usfirst.frc.team4623.robot.commands.auto;
 import org.usfirst.frc.team4623.robot.subsystems.Chassis;
-import org.usfirst.frc.team4623.robot.subsystems.Motor1;
-import org.usfirst.frc.team4623.robot.subsystems.Motor2;
-import org.usfirst.frc.team4623.robot.subsystems.Motor3;
+import org.usfirst.frc.team4623.robot.subsystems.Feed;
+import org.usfirst.frc.team4623.robot.subsystems.Lift;
 import org.usfirst.frc.team4623.robot.subsystems.Pnuematics;
+import org.usfirst.frc.team4623.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -27,9 +27,9 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand;
     SendableChooser chooser;
     
-    public static Motor1 motor1;
-    public static Motor2 motor2;
-    public static Motor3 motor3;
+    public static Shooter shooter;
+    public static Feed feed;
+    public static Lift lift;
     public static Chassis chassis;
     public static Pnuematics pnue;
     public static OI oi;
@@ -40,9 +40,9 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
        
-        motor1 = new Motor1();
-        motor2 = new Motor2();
-        motor3 = new Motor3();
+        shooter = new Shooter();
+        feed = new Feed();
+        lift = new Lift();
         chassis = new Chassis();
         pnue = new Pnuematics();
         oi = new OI();
