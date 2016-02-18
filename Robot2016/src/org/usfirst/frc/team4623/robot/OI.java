@@ -39,12 +39,13 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
     
-	public XBox stick = new XBox(0);
+	public XBox driver = new XBox(0);
+	public XBox buttons = new XBox(1);
 	
 	public OI() {
 		
-      JoystickButton shoot = new JoystickButton(stick, XBox.LB_BUTTON);
-	  JoystickButton feed = new JoystickButton(stick, XBox.RB_BUTTON);
+      JoystickButton shoot = new JoystickButton(driver, XBox.LB_BUTTON);
+	  JoystickButton feed = new JoystickButton(buttons, XBox.RB_BUTTON);
 	  
 	  shoot.whenPressed(new shoot());
 	  

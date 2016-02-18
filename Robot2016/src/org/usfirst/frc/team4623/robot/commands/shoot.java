@@ -13,7 +13,7 @@ public class shoot extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.shooter);
-    	setTimeout(6);
+    	setTimeout(4);
     }
 
     // Called just before this Command runs the first time

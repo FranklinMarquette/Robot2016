@@ -5,7 +5,6 @@ import org.usfirst.frc.team4623.robot.commands.auto;
 import org.usfirst.frc.team4623.robot.subsystems.Chassis;
 import org.usfirst.frc.team4623.robot.subsystems.Feed;
 import org.usfirst.frc.team4623.robot.subsystems.Lift;
-import org.usfirst.frc.team4623.robot.subsystems.Pnuematics;
 import org.usfirst.frc.team4623.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -31,7 +30,6 @@ public class Robot extends IterativeRobot {
     public static Feed feed;
     public static Lift lift;
     public static Chassis chassis;
-    public static Pnuematics pnue;
     public static OI oi;
 
     /**
@@ -44,7 +42,6 @@ public class Robot extends IterativeRobot {
         feed = new Feed();
         lift = new Lift();
         chassis = new Chassis();
-        pnue = new Pnuematics();
         oi = new OI();
         
         chooser = new SendableChooser();
