@@ -12,11 +12,13 @@ public class Shooter extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-	private SpeedController shooter;
+	SpeedController shooter1;
+	SpeedController shooter2;
 	
 	public Shooter() {
 		
-		shooter = new Victor(4);
+		shooter1 = new Victor(4);
+		shooter2 = new Victor(5);
 		
 	}
 
@@ -25,15 +27,17 @@ public class Shooter extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void run(double speed) {
+    public void forwards() {
     	
-    	shooter.set(speed);
+    	shooter1.set(1);
+    	shooter2.set(1);
     	
     }
     
     public void stop(){
     	
-    	shooter.set(0);
+    	shooter1.set(0);
+    	shooter2.set(0);
     	
     }
     

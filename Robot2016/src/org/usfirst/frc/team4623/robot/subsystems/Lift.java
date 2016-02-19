@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 public class Lift extends Subsystem {
 
-    SpeedController liftMotor = new Victor(1);
+    SpeedController liftMotor = new Victor(7);
     DigitalInput limitSwitch1, limitSwitch2;
     Counter counter1, counter2;
     

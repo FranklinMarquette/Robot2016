@@ -20,9 +20,9 @@ public class Arm extends Subsystem {
 	
 	public Arm() {
 		
-		armMotor = new Victor(2);
-		limitSwitch1 = new DigitalInput(2);
-		limitSwitch2 = new DigitalInput(3);
+		armMotor = new Victor(8);
+		limitSwitch1 = new DigitalInput(0);
+		limitSwitch2 = new DigitalInput(1);
 		counter1 = new Counter(limitSwitch1);
 		counter2 = new Counter(limitSwitch2);
 		

@@ -1,8 +1,12 @@
 package org.usfirst.frc.team4623.robot;
 
 import org.usfirst.frc.team4623.robot.commands.Feed;
+import org.usfirst.frc.team4623.robot.commands.Launch;
 import org.usfirst.frc.team4623.robot.commands.armBackwards;
 import org.usfirst.frc.team4623.robot.commands.armForward;
+import org.usfirst.frc.team4623.robot.commands.armRetExt;
+import org.usfirst.frc.team4623.robot.commands.lift2Down;
+import org.usfirst.frc.team4623.robot.commands.lift2Up;
 import org.usfirst.frc.team4623.robot.commands.liftDown;
 import org.usfirst.frc.team4623.robot.commands.liftUp;
 import org.usfirst.frc.team4623.robot.commands.shoot;
@@ -49,15 +53,25 @@ public class OI {
 	public OI() {
 		
       JoystickButton shoot = new JoystickButton(driver, XBox.LB_BUTTON);
+      JoystickButton liftUp2 = new JoystickButton(driver, XBox.Y_BUTTON);
+      JoystickButton liftDown2 = new JoystickButton(driver, XBox.A_BUTTON);
+      JoystickButton launch = new JoystickButton(driver, XBox.RB_BUTTON);
+      JoystickButton armRetExt = new JoystickButton(driver, XBox.X_BUTTON);
 	  
-      JoystickButton feed = new JoystickButton(buttons, XBox.RB_BUTTON);
-	  JoystickButton liftUp = new JoystickButton(buttons, XBox.B_BUTTON);
+      JoystickButton feed = new JoystickButton(buttons, XBox.X_BUTTON);
+	  JoystickButton liftUp = new JoystickButton(buttons, XBox.Y_BUTTON);
 	  JoystickButton liftDown = new JoystickButton(buttons, XBox.A_BUTTON);
 	  JoystickButton armForward = new JoystickButton(buttons, XBox.LB_BUTTON);
 	  JoystickButton armBackwards = new JoystickButton(buttons, XBox.RB_BUTTON);
 	  
 	  
 	  shoot.whenPressed(new shoot());
+	  
+	  liftUp2.whenPressed(new lift2Up());
+	  liftDown2.whenPressed(new lift2Down());
+	  
+	  launch.whenPressed(new Launch());
+	  armRetExt.whenPressed(new armRetExt());
 	  
 	  feed.whenPressed(new Feed());
 	  feed.whenReleased(new stopFeed());
@@ -67,9 +81,7 @@ public class OI {
 	  
 	  armForward.whileHeld(new armForward());
 	  armBackwards.whileHeld(new armBackwards());
-	  
-      
-		
+	
 	}
 	
 }

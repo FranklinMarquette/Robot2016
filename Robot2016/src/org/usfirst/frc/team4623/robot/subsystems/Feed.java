@@ -16,7 +16,7 @@ public class Feed extends Subsystem {
     
     public Feed() {
     	
-    	feedMotor = new Victor(5);
+    	feedMotor = new Victor(9);
     	
     }
     

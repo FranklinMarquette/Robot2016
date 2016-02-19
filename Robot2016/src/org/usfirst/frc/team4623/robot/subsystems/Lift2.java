@@ -7,14 +7,14 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 public class Lift2 extends Subsystem {
 
-    SpeedController liftMotor2 = new Victor(1);
+    SpeedController liftMotor2 = new Victor(6);
     DigitalInput limitSwitch1, limitSwitch2;
     Counter counter1, counter2;
     
     public Lift2() {
     	
-      limitSwitch1 = new DigitalInput(2);
-      limitSwitch2 = new DigitalInput(3);
+      limitSwitch1 = new DigitalInput(4);
+      limitSwitch2 = new DigitalInput(5);
       counter1 = new Counter(limitSwitch1);
       counter2 = new Counter(limitSwitch2);
     	
