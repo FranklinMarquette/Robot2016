@@ -5,13 +5,13 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
-public class Lift extends Subsystem {
+public class Lift2 extends Subsystem {
 
-    SpeedController liftMotor = new Victor(1);
+    SpeedController liftMotor2 = new Victor(1);
     DigitalInput limitSwitch1, limitSwitch2;
     Counter counter1, counter2;
     
-    public Lift() {
+    public Lift2() {
     	
       limitSwitch1 = new DigitalInput(2);
       limitSwitch2 = new DigitalInput(3);
@@ -36,16 +36,16 @@ public class Lift extends Subsystem {
     	counter2.reset();
     }
 
-    public void liftUp() {
-        liftMotor.set(1);
+    public void lift2Up() {
+        liftMotor2.set(1);
     }
 
-    public void liftDown() {
-        liftMotor.set(-1);
+    public void lift2Down() {
+        liftMotor2.set(-1);
     }
 
-    public void liftStop() {
-        liftMotor.set(0);
+    public void lift2Stop() {
+        liftMotor2.set(0);
     }
     protected void initDefaultCommand() {
     }

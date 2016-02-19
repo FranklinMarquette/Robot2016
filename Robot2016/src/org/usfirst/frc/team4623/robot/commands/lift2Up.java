@@ -3,26 +3,26 @@ package org.usfirst.frc.team4623.robot.commands;
 import org.usfirst.frc.team4623.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class liftDown extends Command {
+public class lift2Up extends Command {
 
-    public liftDown() {
-    	requires(Robot.lift);
+    public lift2Up() {
+    	requires(Robot.lift2);
     }
 
     protected void initialize() {
-        Robot.lift.initializeCounter2();
-        Robot.lift.liftDown();
+        Robot.lift2.initializeCounter1();
+        Robot.lift2.lift2Up();
     }
 
     protected void execute() {
     }
 
     protected boolean isFinished() {
-        return Robot.lift.isSwitch2Set();
+        return Robot.lift2.isSwitch1Set();
     }
 
     protected void end() {
-        Robot.lift.liftStop();
+        Robot.lift2.lift2Stop();
     }
 
     protected void interrupted() {

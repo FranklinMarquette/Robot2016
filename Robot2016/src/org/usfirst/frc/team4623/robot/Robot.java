@@ -2,9 +2,11 @@
 package org.usfirst.frc.team4623.robot;
 
 import org.usfirst.frc.team4623.robot.commands.auto;
+import org.usfirst.frc.team4623.robot.subsystems.Arm;
 import org.usfirst.frc.team4623.robot.subsystems.Chassis;
 import org.usfirst.frc.team4623.robot.subsystems.Feed;
 import org.usfirst.frc.team4623.robot.subsystems.Lift;
+import org.usfirst.frc.team4623.robot.subsystems.Lift2;
 import org.usfirst.frc.team4623.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -30,6 +32,8 @@ public class Robot extends IterativeRobot {
     public static Feed feed;
     public static Lift lift;
     public static Chassis chassis;
+    public static Arm arm;
+    public static Lift2 lift2;
     public static OI oi;
 
     /**
@@ -42,6 +46,8 @@ public class Robot extends IterativeRobot {
         feed = new Feed();
         lift = new Lift();
         chassis = new Chassis();
+        arm = new Arm();
+        lift2 = new Lift2();
         oi = new OI();
         
         chooser = new SendableChooser();

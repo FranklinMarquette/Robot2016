@@ -12,11 +12,11 @@ public class Feed extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-    private SpeedController feed;
+     SpeedController feedMotor;
     
     public Feed() {
     	
-    	feed = new Victor(5);
+    	feedMotor = new Victor(5);
     	
     }
     
@@ -28,13 +28,13 @@ public class Feed extends Subsystem {
     
     public void run(double speed) {
     	
-    	feed.set(speed);
+    	feedMotor.set(speed);
     	
     }
     
     public void stop() {
     	
-    	feed.set(0);
+    	feedMotor.set(0);
     	
     }
     

@@ -1,6 +1,10 @@
 package org.usfirst.frc.team4623.robot;
 
 import org.usfirst.frc.team4623.robot.commands.Feed;
+import org.usfirst.frc.team4623.robot.commands.armBackwards;
+import org.usfirst.frc.team4623.robot.commands.armForward;
+import org.usfirst.frc.team4623.robot.commands.liftDown;
+import org.usfirst.frc.team4623.robot.commands.liftUp;
 import org.usfirst.frc.team4623.robot.commands.shoot;
 import org.usfirst.frc.team4623.robot.commands.stopFeed;
 import org.usfirst.frc.team4623.robot.subsystems.XBox;
@@ -45,12 +49,24 @@ public class OI {
 	public OI() {
 		
       JoystickButton shoot = new JoystickButton(driver, XBox.LB_BUTTON);
-	  JoystickButton feed = new JoystickButton(buttons, XBox.RB_BUTTON);
+	  
+      JoystickButton feed = new JoystickButton(buttons, XBox.RB_BUTTON);
+	  JoystickButton liftUp = new JoystickButton(buttons, XBox.B_BUTTON);
+	  JoystickButton liftDown = new JoystickButton(buttons, XBox.A_BUTTON);
+	  JoystickButton armForward = new JoystickButton(buttons, XBox.LB_BUTTON);
+	  JoystickButton armBackwards = new JoystickButton(buttons, XBox.RB_BUTTON);
+	  
 	  
 	  shoot.whenPressed(new shoot());
 	  
 	  feed.whenPressed(new Feed());
 	  feed.whenReleased(new stopFeed());
+	  
+	  liftUp.whileHeld(new liftUp());
+	  liftDown.whileHeld(new liftDown());
+	  
+	  armForward.whileHeld(new armForward());
+	  armBackwards.whileHeld(new armBackwards());
 	  
       
 		
