@@ -46,13 +46,13 @@ public class Arm extends Subsystem {
     
     public void armForward() {
     	
-    	armMotor.set(1);
+    	armMotor.set(-.45);
     	
     }
     
     public void armBackwards() {
     	
-    	armMotor.set(-1);
+    	armMotor.set(.45);
     	
     }
     

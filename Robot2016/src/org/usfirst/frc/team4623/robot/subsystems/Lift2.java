@@ -37,11 +37,11 @@ public class Lift2 extends Subsystem {
     }
 
     public void lift2Up() {
-        liftMotor2.set(1);
+        liftMotor2.set(-1);
     }
 
     public void lift2Down() {
-        liftMotor2.set(-1);
+        liftMotor2.set(1);
     }
 
     public void lift2Stop() {
