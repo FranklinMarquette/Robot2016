@@ -24,7 +24,7 @@ public class driveTele extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	Robot.chassis.driveTele(Robot.oi.driver.getLeftJoyX(), Robot.oi.driver.getLeftJoyY());
+    	Robot.chassis.driveTele(Robot.oi.driver.getLeftJoyY(), Robot.oi.driver.getLeftJoyX());
     	
     }
 

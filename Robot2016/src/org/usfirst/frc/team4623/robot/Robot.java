@@ -1,7 +1,7 @@
 
 package org.usfirst.frc.team4623.robot;
 
-import org.usfirst.frc.team4623.robot.commands.auto;
+import org.usfirst.frc.team4623.robot.commands.autonomous1;
 import org.usfirst.frc.team4623.robot.subsystems.Arm;
 import org.usfirst.frc.team4623.robot.subsystems.Chassis;
 import org.usfirst.frc.team4623.robot.subsystems.Feed;
@@ -86,8 +86,8 @@ public class Robot extends IterativeRobot {
         
 		String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
-		case "My Auto":
-			autonomousCommand = new auto();
+		case "Auto1":
+			autonomousCommand = new autonomous1();
 			break;
 		} 
     	

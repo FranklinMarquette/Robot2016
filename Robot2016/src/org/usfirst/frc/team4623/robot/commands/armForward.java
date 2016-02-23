@@ -18,17 +18,16 @@ public class armForward extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.arm.initializeCounter1();
-        Robot.arm.armForward();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.arm.armForward();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.arm.isSwitch1Set();
+        return false;
     }
 
     protected void end() {

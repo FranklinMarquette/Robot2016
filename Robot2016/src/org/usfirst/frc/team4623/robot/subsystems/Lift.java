@@ -13,35 +13,21 @@ public class Lift extends Subsystem {
     
     public Lift() {
     	
-      limitSwitch1 = new DigitalInput(2);
-      limitSwitch2 = new DigitalInput(3);
-      counter1 = new Counter(limitSwitch1);
-      counter2 = new Counter(limitSwitch2);
+      limitSwitch1 = new DigitalInput(0);
+      limitSwitch2 = new DigitalInput(1);
     	
     }
 
-    public boolean isSwitch1Set() {
-        return counter1.get() > 0;
-    }
-    
-    public boolean isSwitch2Set() {
-    	return counter2.get() > 0;
-    }
-
-    public void initializeCounter1() {
-        counter1.reset();
-    }
-    
-    public void initializeCounter2() {
-    	counter2.reset();
-    }
-
     public void liftUp() {
-        liftMotor.set(1);
+    	liftMotor.set(1);
+    	/*while(limitSwitch1.get() == true && limitSwitch2.get() == false) {
+    }*/
     }
 
     public void liftDown() {
         liftMotor.set(-1);
+    	/*while(limitSwitch2.get() == true && limitSwitch1.get() == false) {
+    }*/
     }
 
     public void liftStop() {

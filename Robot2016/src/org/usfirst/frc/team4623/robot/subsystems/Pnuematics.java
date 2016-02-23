@@ -30,7 +30,6 @@ public class Pnuematics extends Subsystem {
 	}
 
 	public boolean toggle1;
-	public boolean toggle2;
 			
 		    public void solenoid1In() {
 		    	   ds1.set(DoubleSolenoid.Value.kReverse);
@@ -42,14 +41,15 @@ public class Pnuematics extends Subsystem {
 		    toggle1 = false;
 		       }
 		    
-		    public void solenoid2In() {
-		    	   ds2.set(DoubleSolenoid.Value.kReverse);
-			toggle2 = true;
-		    }
-		       
-		    public void solenoid2Out(){
-		    	   ds2.set(DoubleSolenoid.Value.kForward);
-		    toggle2 = false;
-		       }
-
+	        public void solenoid2Out() {
+	        	ds2.set(DoubleSolenoid.Value.kForward);
+	        }
+	        
+	        public void solenoid2In() {
+	        	ds2.set(DoubleSolenoid.Value.kReverse);
+	        }
+	        
+	        public void solenoid2Stop() {
+	        	ds2.set(DoubleSolenoid.Value.kOff);
+	        }
 }

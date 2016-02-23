@@ -36,7 +36,7 @@ public class Chassis extends Subsystem {
     
     public void driveTele(double moveValue, double turnValue) {
     	
-    	 drive.arcadeDrive(moveValue, turnValue);
+    	 drive.arcadeDrive(-moveValue, -turnValue);
     	
     }
     

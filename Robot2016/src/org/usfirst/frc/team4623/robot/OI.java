@@ -4,10 +4,13 @@ import org.usfirst.frc.team4623.robot.commands.Feed;
 import org.usfirst.frc.team4623.robot.commands.Launch;
 import org.usfirst.frc.team4623.robot.commands.armBackwards;
 import org.usfirst.frc.team4623.robot.commands.armForward;
-import org.usfirst.frc.team4623.robot.commands.armRetExt;
+import org.usfirst.frc.team4623.robot.commands.armStop;
 import org.usfirst.frc.team4623.robot.commands.lift2Down;
 import org.usfirst.frc.team4623.robot.commands.lift2Up;
 import org.usfirst.frc.team4623.robot.commands.liftDown;
+import org.usfirst.frc.team4623.robot.commands.liftExtend;
+import org.usfirst.frc.team4623.robot.commands.liftRetract;
+import org.usfirst.frc.team4623.robot.commands.liftStop;
 import org.usfirst.frc.team4623.robot.commands.liftUp;
 import org.usfirst.frc.team4623.robot.commands.shoot;
 import org.usfirst.frc.team4623.robot.commands.stopFeed;
@@ -56,11 +59,12 @@ public class OI {
       JoystickButton liftUp2 = new JoystickButton(driver, XBox.Y_BUTTON);
       JoystickButton liftDown2 = new JoystickButton(driver, XBox.A_BUTTON);
       JoystickButton launch = new JoystickButton(driver, XBox.RB_BUTTON);
-      JoystickButton armRetExt = new JoystickButton(driver, XBox.X_BUTTON);
+      JoystickButton liftExt = new JoystickButton(driver, XBox.X_BUTTON);
+      JoystickButton liftRet = new JoystickButton(driver, XBox.B_BUTTON);
 	  
       JoystickButton feed = new JoystickButton(buttons, XBox.X_BUTTON);
-	  JoystickButton liftUp = new JoystickButton(buttons, XBox.Y_BUTTON);
-	  JoystickButton liftDown = new JoystickButton(buttons, XBox.A_BUTTON);
+	  JoystickButton liftArmUp = new JoystickButton(buttons, XBox.Y_BUTTON);
+	  JoystickButton liftArmDown = new JoystickButton(buttons, XBox.A_BUTTON);
 	  JoystickButton armForward = new JoystickButton(buttons, XBox.LB_BUTTON);
 	  JoystickButton armBackwards = new JoystickButton(buttons, XBox.RB_BUTTON);
 	  
@@ -71,16 +75,22 @@ public class OI {
 	  liftDown2.whenPressed(new lift2Down());
 	  
 	  launch.whenPressed(new Launch());
-	  armRetExt.whenPressed(new armRetExt());
+	  
+	  liftExt.whenPressed(new liftExtend());
+	  liftRet.whenPressed(new liftRetract());
 	  
 	  feed.whenPressed(new Feed());
 	  feed.whenReleased(new stopFeed());
 	  
-	  liftUp.whileHeld(new liftUp());
-	  liftDown.whileHeld(new liftDown());
+	  liftArmUp.whenPressed(new liftUp());
+	  liftArmUp.whenReleased(new liftStop());
+	  liftArmDown.whenPressed(new liftDown());
+	  liftArmDown.whenReleased(new liftStop());
 	  
-	  armForward.whileHeld(new armForward());
+	  armForward.whenPressed(new armForward());
+	  armForward.whenReleased(new armStop());
 	  armBackwards.whileHeld(new armBackwards());
+	  armBackwards.whenReleased(new armStop());
 	
 	}
 	

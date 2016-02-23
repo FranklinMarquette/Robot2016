@@ -10,15 +10,14 @@ public class liftDown extends Command {
     }
 
     protected void initialize() {
-        Robot.lift.initializeCounter2();
-        Robot.lift.liftDown();
     }
 
     protected void execute() {
+    	 Robot.lift.liftDown();
     }
 
     protected boolean isFinished() {
-        return Robot.lift.isSwitch2Set();
+        return false;
     }
 
     protected void end() {

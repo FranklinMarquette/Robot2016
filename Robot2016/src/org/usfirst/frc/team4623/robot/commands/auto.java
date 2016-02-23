@@ -15,12 +15,12 @@ public class auto extends Command {
     	
     	requires(Robot.chassis);
     	
-    	setTimeout(.5);
+    	setTimeout(3);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.chassis.setSpeed(1);
+    	Robot.chassis.setSpeed(.5);
     }
 
     // Called repeatedly when this Command is scheduled to run

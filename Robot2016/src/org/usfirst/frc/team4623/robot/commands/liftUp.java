@@ -10,15 +10,14 @@ public class liftUp extends Command {
     }
 
     protected void initialize() {
-        Robot.lift.initializeCounter1();
-        Robot.lift.liftUp();
     }
 
     protected void execute() {
+    	Robot.lift.liftUp();
     }
 
     protected boolean isFinished() {
-        return Robot.lift.isSwitch1Set();
+        return false;
     }
 
     protected void end() {

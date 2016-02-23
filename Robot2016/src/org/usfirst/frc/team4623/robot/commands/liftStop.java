@@ -7,13 +7,13 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class armBackwards extends Command {
+public class liftStop extends Command {
 
-	public armBackwards() {
+    public liftStop() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	
-    	requires(Robot.arm);
+    	requires(Robot.lift);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +22,7 @@ public class armBackwards extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.arm.armBackwards();
+    	Robot.lift.liftStop();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,11 +30,14 @@ public class armBackwards extends Command {
         return false;
     }
 
+    // Called once after isFinished returns true
     protected void end() {
-        Robot.arm.armStop();
     }
 
+    // Called when another command which requires one or more of the same
+    // subsystems is scheduled to run
     protected void interrupted() {
-        end();
+    	end();
     }
 }
+
