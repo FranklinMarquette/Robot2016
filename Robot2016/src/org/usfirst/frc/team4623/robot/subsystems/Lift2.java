@@ -5,47 +5,61 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
 public class Lift2 extends Subsystem {
 
-    SpeedController liftMotor2 = new Victor(6);
-    DigitalInput limitSwitch1, limitSwitch2;
-    Counter counter1, counter2;
+    Victor liftMotor = new Victor(7);
+    DigitalInput topSwitch, botSwitch;
+    Counter topCounter, botCounter;
     
     public Lift2() {
-    	
-      limitSwitch1 = new DigitalInput(4);
-      limitSwitch2 = new DigitalInput(5);
-      counter1 = new Counter(limitSwitch1);
-      counter2 = new Counter(limitSwitch2);
-    	
-    }
+      topSwitch = new DigitalInput(0);
+      botSwitch = new DigitalInput(1);
+      topCounter = new Counter(topSwitch);
+      botCounter = new Counter(botSwitch);
 
-    public boolean isSwitch1Set() {
-        return counter1.get() > 0;
+      LiveWindow.addActuator("Lift", "Motor", liftMotor);
+      LiveWindow.addSensor("Lift", "Top Switch", topSwitch);
+      LiveWindow.addSensor("Lift", "Top Count", topCounter);
+      LiveWindow.addSensor("Lift", "Bot Switch", botSwitch);
+      LiveWindow.addSensor("Lift", "Bot Count", botCounter);
     }
     
-    public boolean isSwitch2Set() {
-    	return counter2.get() > 0;
-    }
-
-    public void initializeCounter1() {
-        counter1.reset();
+    /**
+     * @return Number of times the top limit switch has been hit.
+     */
+    public int getTopCount() {
+    	return topCounter.get();
     }
     
-    public void initializeCounter2() {
-    	counter2.reset();
+    /**
+     * @return Number of times the bottom limit switch has been hit.
+     */
+    public int getBotCount() {
+    	return botCounter.get();
     }
 
-    public void lift2Up() {
-        liftMotor2.set(-1);
+    public void liftUp() {
+    	double power = 1;
+        // stop motor if attempt is made to go past the top
+    	if (topSwitch.get()) {
+    		power = 0;
+    	}
+    	liftMotor.set(power);
     }
 
-    public void lift2Down() {
-        liftMotor2.set(1);
+    public void liftDown() {
+    	double power = -1;
+        // stop motor if attempt made to go past bottom
+    	if (botSwitch.get()) {
+    		power = 0;
+    	}
+        liftMotor.set(power);
     }
 
-    public void lift2Stop() {
-        liftMotor2.set(0);
+    public void liftStop() {
+        liftMotor.set(0);
     }
     protected void initDefaultCommand() {
     }
