@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class driveTele2 extends Command {
+public class driveTele extends Command {
 	
-    public driveTele2() {
+    public driveTele() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	
