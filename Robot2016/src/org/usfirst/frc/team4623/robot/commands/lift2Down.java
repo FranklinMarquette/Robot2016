@@ -10,19 +10,18 @@ public class lift2Down extends Command {
     }
 
     protected void initialize() {
-        Robot.lift2.initializeCounter2();
-        Robot.lift2.lift2Down();
+        Robot.lift2.liftDown();
     }
 
     protected void execute() {
     }
 
     protected boolean isFinished() {
-        return Robot.lift2.isSwitch2Set();
+        return false;
     }
 
     protected void end() {
-        Robot.lift2.lift2Stop();
+        Robot.lift2.liftStop();
     }
 
     protected void interrupted() {

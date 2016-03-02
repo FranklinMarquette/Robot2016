@@ -3,15 +3,16 @@ package org.usfirst.frc.team4623.robot;
 import org.usfirst.frc.team4623.robot.commands.Feed;
 import org.usfirst.frc.team4623.robot.commands.Launch;
 import org.usfirst.frc.team4623.robot.commands.armBackwards;
+import org.usfirst.frc.team4623.robot.commands.armDown;
 import org.usfirst.frc.team4623.robot.commands.armForward;
+import org.usfirst.frc.team4623.robot.commands.armLiftStop;
 import org.usfirst.frc.team4623.robot.commands.armStop;
-import org.usfirst.frc.team4623.robot.commands.lift2Down;
-import org.usfirst.frc.team4623.robot.commands.lift2Up;
-import org.usfirst.frc.team4623.robot.commands.liftDown;
+import org.usfirst.frc.team4623.robot.commands.armUp;
+import org.usfirst.frc.team4623.robot.commands.botDown;
+import org.usfirst.frc.team4623.robot.commands.botStop;
+import org.usfirst.frc.team4623.robot.commands.botUp;
 import org.usfirst.frc.team4623.robot.commands.liftExtend;
 import org.usfirst.frc.team4623.robot.commands.liftRetract;
-import org.usfirst.frc.team4623.robot.commands.liftStop;
-import org.usfirst.frc.team4623.robot.commands.liftUp;
 import org.usfirst.frc.team4623.robot.commands.shoot;
 import org.usfirst.frc.team4623.robot.commands.stopFeed;
 import org.usfirst.frc.team4623.robot.subsystems.XBox;
@@ -56,25 +57,25 @@ public class OI {
 	public OI() {
 		
       JoystickButton shoot = new JoystickButton(driver, XBox.LB_BUTTON);
-      JoystickButton liftUp2 = new JoystickButton(driver, XBox.Y_BUTTON);
-      JoystickButton liftDown2 = new JoystickButton(driver, XBox.A_BUTTON);
+      JoystickButton botLiftUp = new JoystickButton(driver, XBox.Y_BUTTON);
+      JoystickButton botLiftDown = new JoystickButton(driver, XBox.A_BUTTON);
       JoystickButton launch = new JoystickButton(driver, XBox.RB_BUTTON);
       JoystickButton liftExt = new JoystickButton(driver, XBox.X_BUTTON);
       JoystickButton liftRet = new JoystickButton(driver, XBox.B_BUTTON);
 	  
       JoystickButton feed = new JoystickButton(buttons, XBox.X_BUTTON);
-	  JoystickButton liftArmUp = new JoystickButton(buttons, XBox.Y_BUTTON);
-	  JoystickButton liftArmDown = new JoystickButton(buttons, XBox.A_BUTTON);
+	  JoystickButton armLiftUp = new JoystickButton(buttons, XBox.Y_BUTTON);
+	  JoystickButton armLiftDown = new JoystickButton(buttons, XBox.A_BUTTON);
 	  JoystickButton armForward = new JoystickButton(buttons, XBox.LB_BUTTON);
 	  JoystickButton armBackwards = new JoystickButton(buttons, XBox.RB_BUTTON);
 	  
 	  
 	  shoot.whenPressed(new shoot());
 	  
-	  liftUp2.whenPressed(new lift2Up());
-	  liftUp2.whenReleased(new liftStop());
-	  liftDown2.whenPressed(new lift2Down());
-	  liftDown2.whenReleased(new liftStop());
+	  botLiftUp.whenPressed(new botUp());
+	  botLiftUp.whenReleased(new botStop());
+	  botLiftDown.whenPressed(new botDown());
+	  botLiftDown.whenReleased(new botStop());
 	  
 	  launch.whenPressed(new Launch());
 	  
@@ -84,10 +85,10 @@ public class OI {
 	  feed.whenPressed(new Feed());
 	  feed.whenReleased(new stopFeed());
 	  
-	  liftArmUp.whenPressed(new liftUp());
-	  liftArmUp.whenReleased(new liftStop());
-	  liftArmDown.whenPressed(new liftDown());
-	  liftArmDown.whenReleased(new liftStop());
+	  armLiftUp.whenPressed(new armUp());
+	  armLiftUp.whenReleased(new armLiftStop());
+	  armLiftDown.whenPressed(new armDown());
+	  armLiftDown.whenReleased(new armLiftStop());
 	  
 	  armForward.whenPressed(new armForward());
 	  armForward.whenReleased(new armStop());
